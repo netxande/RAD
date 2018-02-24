@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<!--
+<p>
+  <strong>Nome:</strong>
+  <%= @student.nome %>
+</p>
+
+<p>
+  <strong>Matricula:</strong>
+  <%= @student.matricula %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+!-->
+<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+  <div class="card-header"><h4 class="card-title"><%= @student.nome%></h4></div>
+  <div class="card-body">
+    <h6 class="card-title">Matricula: <%= @student.matricula%></h6>
+    <h6 class="card-title">Email: <%= @student.email%></h6>
+    <p class="card-text">Estudante do IFPB.</p>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_student_path(@student), class:"button btn btn-primary" %>
+<%= link_to 'Voltar', students_path, class:"button btn btn-warning" %>

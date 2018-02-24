@@ -1,0 +1,19 @@
+<h1>Cadastrar Estudante</h1>
+
+<%= render 'form', student: @student %>
+
+<style type="text/css">
+	div.botao {
+	    position: absolute;
+	    top: 250px;
+	    left: 70px;
+	}
+</style>
+
+<div class="botao">
+	<%= button_to 'Voltar', students_path, options={:method => :get, class: 'btn btn-warning'} %>
+</div>
+
+
+
+<!--<%= link_to 'Voltar', students_path, class:"button btn btn-warning" %>!-->
