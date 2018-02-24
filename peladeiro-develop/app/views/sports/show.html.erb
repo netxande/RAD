@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @sport.nome %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @sport.descricao %>
+</p>
+
+<p>
+  <strong>Regra:</strong>
+  <%= @sport.regra %>
+</p>
+
+<%= image_tag @sport.foto.url(:large) %>
+<%= image_tag @sport.foto.url(:medium) %>
+<%= image_tag @sport.foto.url(:thumb) %>
+
+<%= link_to 'Edit', edit_sport_path(@sport) %> |
+<%= link_to 'Back', sports_path %>

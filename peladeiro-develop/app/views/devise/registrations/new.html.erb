@@ -1,0 +1,35 @@
+<div class="jumbotron">
+ <div class="container">
+   <div class="form-signin">
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+ <h2 class="form-signin-heading">Sing Up</h2>
+  <div class="field">
+    <%= f.label :email %><br />
+     <%= f.email_field :email, autofocus: true, type:"email", id:"inputEmail",class:"form-control", placeholder:"Endereço de Email", required:'autofocus' , autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, type:"password", id:"inputPassword", class:"form-control", placeholder:"Senha",required:'autofocus', autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, type:"password", id:"inputPasswordConfirm", class:"form-control", placeholder:"Senha",required:'autofocus', class:"form-control", placeholder:"Confirme senha", autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class:"btn btn-lg btn-primary btn-block" %>
+  </div>
+  <br>
+  <%= render "devise/shared/links" %>
+<% end %>
+
+</div> <!-- /container -->
+</div>
+</div>
+

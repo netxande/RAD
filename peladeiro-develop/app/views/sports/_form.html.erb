@@ -1,0 +1,36 @@
+<%= form_with(model: sport, local: true, :html => {multipart: true}) do |form| %>
+  <% if sport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sport.errors.count, "error") %> prohibited this sport from being saved:</h2>
+
+      <ul>
+      <% sport.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :sport_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao, id: :sport_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :regra %>
+    <%= form.text_area :regra, id: :sport_regra %>
+  </div>
+  <div class="field">
+    <%= form.label :foto %>
+    <%= form.file_field :foto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

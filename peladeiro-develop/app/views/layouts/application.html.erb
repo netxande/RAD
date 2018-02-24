@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="<%= image_path("favicon.ico")%>">
+
+  <title>Peladeiro</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+  <%= render partial: "shared/navbar"%>
+
+  <!-- Acho que essas mensagens devem ser chamadas dentro de cada página, se não fica repetindo -->
+ <!--  <% if user_signed_in?%>
+      
+      <div class="alert alert-success fade in alert-dismissable" style="margin-top:18px;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>Successo!</strong><%= notice %>
+      </div>
+      
+  
+      <div class="alert alert-warning fade in alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        <strong>Alerta!</strong> <%= alert %>
+      </div>
+
+  <%end%> -->
+  
+  <%= yield %>
+  
+  <%= render partial: "shared/rodape"%>
+</body>
+</html>

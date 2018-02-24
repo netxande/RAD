@@ -1,0 +1,21 @@
+<main role="main">
+  
+  <% if user_signed_in?%>
+   <!-- Main jumbotron for a primary marketing message or call to action -->
+  <%= render partial: "home/dashboard"%> 
+  
+  <% else %>
+   <%= render partial: "home/carousel"%>
+     <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+     
+        <!-- Chamada partial grupos recentes para não logados -->
+     <%= render partial: "home/gruposRecentes"%>
+
+    <!-- Chamada partial eventos em destaques não logado -->
+      <%= render partial: "home/eventosDestaque"%>
+
+    </div>
+  <%end%>
+ </main>
+

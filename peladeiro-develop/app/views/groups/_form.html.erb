@@ -1,0 +1,43 @@
+<%= form_with(model: group, local: true) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :group_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao, id: :group_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Atividade Esportiva" %>
+    <%= form.select :sport_id, options_from_collection_for_select(@esportes, "id", "nome") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fundador_id %>
+    <%= form.text_field :fundador_id, id: :group_fundador_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estatuto %>
+    <%= form.text_area :estatuto, id: :group_estatuto %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+
+
+<% end %>
